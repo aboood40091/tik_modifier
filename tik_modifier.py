@@ -37,5 +37,5 @@ else:
 
 with open(sys.argv[1], "wb") as tik3:
     tik3.write(tik2)
-    tik.close()
+    tik3.close()
     print("Modified!")
