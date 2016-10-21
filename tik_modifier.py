@@ -1,3 +1,7 @@
+# Ticket Modifier
+# Version v1.1
+# Copyright © 2016 AboodXD
+
 import sys, time
 
 print("tik_modifier")
