@@ -35,7 +35,9 @@ else:
     time.sleep(5)
     sys.exit(1)
 
-with open(sys.argv[1], "wb") as tik3:
+name = os.path.splitext(sys.argv[1])[0]
+    
+with open(name + "_modified.tik", "wb+") as tik3:
     tik3.write(tik2)
     tik3.close()
     print("Modified!")
