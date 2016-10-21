@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Ticket Modifier
 # Version v1.1
 # Copyright © 2016 AboodXD
