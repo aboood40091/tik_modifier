@@ -5,7 +5,7 @@
 # Version v1.1
 # Copyright © 2016 AboodXD
 
-import sys, time
+import os, sys, time
 
 print("tik_modifier")
 print("(C) 2016 AboodXD")
