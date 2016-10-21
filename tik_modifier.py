@@ -9,7 +9,13 @@ if len(sys.argv) != 3:
     time.sleep(5)
     sys.exit(1)
     
-
+try:
+    assert sys.argv[1].endswith('.tik')
+except AssertionError:
+    print("Are you sure this is a tik file?")
+    time.sleep(5)
+    sys.exit(1)
+    
 with open(sys.argv[1], "rb") as tik:
     print("Opening .tik...")
     tik1 = tik.read()
