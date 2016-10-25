@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Ticket Modifier
-# Version v1.2
+# Version v1.3
 # Copyright © 2016 AboodXD
 
 import os, sys, time
@@ -30,6 +30,11 @@ with open(sys.argv[1], "rb") as tik:
 
 
 tik2 = bytearray(tik1)
+
+if tik2[0x1:0x1+1] == (1).to_bytes(1, 'big'):
+    print("This tik file has already been modified!")
+    time.sleep(5)
+    sys.exit(1)
 
 print("Modifing .tik...")
 tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')

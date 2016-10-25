@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Ticket Modifier
-# Version v1.2
+# Version v1.3
 # Copyright © 2016 AboodXD
 
 import os, shutil, sys
 from cx_Freeze import setup, Executable
 
-version = '1.2'
+version = '1.3'
 
 # Pick a build directory
 dir_ = 'tik_modifier v' + version
