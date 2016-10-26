@@ -38,7 +38,7 @@ if tik2[0x1:0x1+1] == (1).to_bytes(1, 'big'):
 
 print("Modifing tik file...")
 tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')
-tik2[0xF:0xF+1] = (int.from_bytes(tik2[0xF:0xF+1],'big') ^ 2).to_bytes(1, 'big')
+tik2[0xF:0xF+1] = (int.from_bytes(tik2[0xF:0xF+1], 'big') ^ 2).to_bytes(1, 'big')
 
 name = os.path.splitext(sys.argv[1])[0]
     
