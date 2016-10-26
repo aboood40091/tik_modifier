@@ -24,7 +24,7 @@ except AssertionError:
     sys.exit(1)
     
 with open(sys.argv[1], "rb") as tik:
-    print("Opening .tik...")
+    print("Opening tik file...")
     tik1 = tik.read()
     tik.close()
 
@@ -36,7 +36,7 @@ if tik2[0x1:0x1+1] == (1).to_bytes(1, 'big'):
     time.sleep(5)
     sys.exit(1)
 
-print("Modifing .tik...")
+print("Modifing tik file...")
 tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')
 tik2[0xF:0xF+1] = (int.from_bytes(tik2[0xF:0xF+1],'big') ^ 2).to_bytes(1, 'big')
 
