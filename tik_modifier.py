@@ -13,14 +13,14 @@ print("")
 
 if len(sys.argv) != 2:
     print("Err...")
-    time.sleep(5)
+    time.sleep(3)
     sys.exit(1)
     
 try:
     assert sys.argv[1].endswith('.tik')
 except AssertionError:
     print("Are you sure this is a tik file?")
-    time.sleep(5)
+    time.sleep(3)
     sys.exit(1)
     
 with open(sys.argv[1], "rb") as tik:
@@ -33,12 +33,19 @@ tik2 = bytearray(tik1)
 
 if tik2[0x1:0x1+1] == (1).to_bytes(1, 'big'):
     print("This tik file has already been modified!")
-    time.sleep(5)
+    time.sleep(3)
     sys.exit(1)
 
-print("Modifing tik file...")
-tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')
-tik2[0xF:0xF+1] = (int.from_bytes(tik2[0xF:0xF+1], 'big') ^ 2).to_bytes(1, 'big')
+task = input("Did you get this tik using DiscU 4.1b or higher? [y/n]  ")
+
+if (task == "y" or task == "Y" or task == "yes" or task == "Yes" or task == "YES" or task == "yES" or task == "yEs" or task == "yeS"):
+    print("Modifing tik file...")
+    tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')
+
+elif (task == "n" or task == "N" or task == "no" or task == "No" or task == "NO" or task == "nO"):
+    print("Modifing tik file...")
+    tik2[0x1:0x1+1] = (1).to_bytes(1, 'big')
+    tik2[0xF:0xF+1] = (int.from_bytes(tik2[0xF:0xF+1], 'big') ^ 2).to_bytes(1, 'big')
 
 name = os.path.splitext(sys.argv[1])[0]
     
